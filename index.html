@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>A3 Kraanservice – Mobile Torenkraan Specialist</title>
+  <meta name="description" content="A3 Kraanservice is uw specialist in service, onderhoud, keuringen en aan/verkoopbemiddeling van mobile torenkranen. Actief sinds eind jaren '80. Op locatie in binnen- en buitenland." />
+  <link rel="icon" href="../images/favicon.png" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    * { font-family: 'Plus Jakarta Sans', sans-serif; }
+    html { scroll-behavior: smooth; }
+
+    .hero-bg {
+      background-image: linear-gradient(to bottom, rgba(15,23,42,0.75) 0%, rgba(15,23,42,0.55) 60%, rgba(15,23,42,0.85) 100%), url('../images/hero.jpg');
+      background-size: cover;
+      background-position: center;
+    }
+
+    .nav-link {
+      position: relative;
+      transition: color 0.2s;
+    }
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: #f59e0b;
+      transition: width 0.25s ease;
+    }
+    .nav-link:hover::after { width: 100%; }
+    .nav-link:hover { color: #f59e0b; }
+
+    .service-card {
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+    .service-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+    }
+
+    .stat-number {
+      font-size: 3rem;
+      font-weight: 800;
+      line-height: 1;
+      color: #f59e0b;
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .fade-in { animation: fadeInUp 0.7s ease forwards; }
+    .fade-in-delay { animation: fadeInUp 0.7s ease 0.2s forwards; opacity: 0; }
+    .fade-in-delay-2 { animation: fadeInUp 0.7s ease 0.4s forwards; opacity: 0; }
+
+    .mobile-menu { display: none; }
+    .mobile-menu.open { display: block; }
+  </style>
+</head>
+<body class="bg-slate-50 text-slate-900">
+
+  <!-- NAV -->
+  <header class="fixed top-0 left-0 right-0 z-50 bg-slate-900/95 backdrop-blur border-b border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+      <div class="flex items-center justify-between h-16">
+
+        <!-- Logo -->
+        <a href="index.html" class="flex items-center gap-3">
+          <img src="../images/logo.png" alt="A3 Kraanservice logo" class="h-9 w-auto" />
+          <span class="text-white font-700 text-lg hidden sm:block">A3 Kraanservice</span>
+        </a>
+
+        <!-- Desktop nav -->
+        <nav class="hidden md:flex items-center gap-8">
+          <a href="index.html" class="nav-link text-amber-400 text-sm font-500">Home</a>
+          <a href="service.html" class="nav-link text-slate-300 text-sm font-500">Service</a>
+          <a href="keuringen.html" class="nav-link text-slate-300 text-sm font-500">Keuringen</a>
+          <a href="bemiddeling.html" class="nav-link text-slate-300 text-sm font-500">Bemiddeling</a>
+          <a href="galerij.html" class="nav-link text-slate-300 text-sm font-500">Galerij</a>
+          <a href="contact.html" class="bg-amber-500 hover:bg-amber-400 transition-colors duration-200 text-slate-900 font-600 text-sm px-5 py-2 rounded-lg cursor-pointer">Contact</a>
+        </nav>
+
+        <!-- Mobile hamburger -->
+        <button onclick="document.getElementById('mobileMenu').classList.toggle('open')" class="md:hidden text-white p-2 cursor-pointer">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
+
+      <!-- Mobile menu -->
+      <div id="mobileMenu" class="mobile-menu md:hidden border-t border-slate-800 py-4">
+        <nav class="flex flex-col gap-4 px-2">
+          <a href="index.html" class="text-amber-400 font-500 text-sm">Home</a>
+          <a href="service.html" class="text-slate-300 font-500 text-sm">Service</a>
+          <a href="keuringen.html" class="text-slate-300 font-500 text-sm">Keuringen</a>
+          <a href="bemiddeling.html" class="text-slate-300 font-500 text-sm">Bemiddeling</a>
+          <a href="galerij.html" class="text-slate-300 font-500 text-sm">Galerij</a>
+          <a href="contact.html" class="text-slate-300 font-500 text-sm">Contact</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero-bg min-h-screen flex items-center pt-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 py-24">
+      <div class="max-w-2xl">
+        <p class="fade-in text-amber-400 font-600 text-sm uppercase tracking-widest mb-4">Mobile Torenkraan Specialist</p>
+        <h1 class="fade-in-delay text-white font-800 text-4xl sm:text-5xl lg:text-6xl leading-tight mb-6">
+          Veiligheid,<br/>voor mens<br/>en milieu.
+        </h1>
+        <p class="fade-in-delay-2 text-slate-300 text-lg leading-relaxed mb-10 max-w-xl">
+          A3 Kraanservice is uw specialist in service, onderhoud en keuringen van mobile torenkranen. Met een mobile werkplaats komen wij naar ú — overal in binnen- en buitenland.
+        </p>
+        <div class="fade-in-delay-2 flex flex-wrap gap-4">
+          <a href="contact.html" class="bg-amber-500 hover:bg-amber-400 transition-colors duration-200 text-slate-900 font-700 px-8 py-3 rounded-lg cursor-pointer inline-block">
+            Neem contact op
+          </a>
+          <a href="service.html" class="border border-white/30 hover:border-white/60 text-white transition-colors duration-200 font-600 px-8 py-3 rounded-lg cursor-pointer inline-block">
+            Onze diensten
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <section class="bg-slate-900 py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+        <div>
+          <div class="stat-number">35+</div>
+          <p class="text-slate-400 text-sm mt-2 font-500">Jaar ervaring</p>
+        </div>
+        <div>
+          <div class="stat-number">100+</div>
+          <p class="text-slate-400 text-sm mt-2 font-500">Kraanprojecten</p>
+        </div>
+        <div>
+          <div class="stat-number">2</div>
+          <p class="text-slate-400 text-sm mt-2 font-500">Landen actief</p>
+        </div>
+        <div>
+          <div class="stat-number">24/7</div>
+          <p class="text-slate-400 text-sm mt-2 font-500">Bereikbaar</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DIENSTEN -->
+  <section class="py-24 bg-slate-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+      <div class="text-center mb-16">
+        <p class="text-amber-500 font-600 text-sm uppercase tracking-widest mb-3">Wat wij doen</p>
+        <h2 class="text-slate-900 font-800 text-3xl sm:text-4xl">Onze diensten</h2>
+        <p class="text-slate-500 mt-4 max-w-xl mx-auto">Volledig ontzorgd — van onderhoud en keuringen tot aan/verkoopbegeleiding van mobile torenkranen.</p>
+      </div>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+        <!-- Service & Onderhoud -->
+        <a href="service.html" class="service-card bg-white rounded-2xl p-8 border border-slate-100 shadow-sm cursor-pointer block">
+          <div class="w-12 h-12 bg-amber-50 rounded-xl flex items-center justify-center mb-6">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-amber-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+              <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+            </svg>
+          </div>
+          <h3 class="text-slate-900 font-700 text-xl mb-3">Service & Onderhoud</h3>
+          <p class="text-slate-500 text-sm leading-relaxed">Reparatie en onderhoud op locatie, in binnen- en buitenland. Mobile werkplaats — wij komen naar uw machine toe.</p>
+          <div class="mt-6 text-amber-500 font-600 text-sm flex items-center gap-2">
+            Meer lezen
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            </svg>
+          </div>
+        </a>
+
+        <!-- Kraan Keuringen -->
+        <a href="keuringen.html" class="service-card bg-white rounded-2xl p-8 border border-slate-100 shadow-sm cursor-pointer block">
+          <div class="w-12 h-12 bg-amber-50 rounded-xl flex items-center justify-center mb-6">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-amber-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
+            </svg>
+          </div>
+          <h3 class="text-slate-900 font-700 text-xl mb-3">Kraan Keuringen</h3>
+          <p class="text-slate-500 text-sm leading-relaxed">Jaarlijkse keuringen tot 10 ton/meter én TCVT-keuringen voor zwaardere kranen. Rapport, kraanlogboek en datumsticker inbegrepen.</p>
+          <div class="mt-6 text-amber-500 font-600 text-sm flex items-center gap-2">
+            Meer lezen
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            </svg>
+          </div>
+        </a>
+
+        <!-- Bemiddeling -->
+        <a href="bemiddeling.html" class="service-card bg-white rounded-2xl p-8 border border-slate-100 shadow-sm cursor-pointer block">
+          <div class="w-12 h-12 bg-amber-50 rounded-xl flex items-center justify-center mb-6">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-amber-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" />
+            </svg>
+          </div>
+          <h3 class="text-slate-900 font-700 text-xl mb-3">Aan/Verkoop Bemiddeling</h3>
+          <p class="text-slate-500 text-sm leading-relaxed">Onafhankelijke inspectie bij aan- of verkoop van een mobile torenkraan. Inclusief controle op CE-verklaring, logboek en onderhoudhistorie.</p>
+          <div class="mt-6 text-amber-500 font-600 text-sm flex items-center gap-2">
+            Meer lezen
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            </svg>
+          </div>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- OVER ONS -->
+  <section class="py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+      <div class="grid lg:grid-cols-2 gap-16 items-center">
+
+        <div class="relative">
+          <img src="../images/gallery_ikzelf.jpg" alt="Adri Megens – eigenaar A3 Kraanservice" class="rounded-2xl w-full object-cover max-h-[520px]" />
+          <div class="absolute -bottom-6 -right-6 bg-amber-500 rounded-2xl p-6 shadow-xl hidden sm:block">
+            <p class="text-slate-900 font-800 text-3xl">35+</p>
+            <p class="text-slate-900 font-500 text-sm mt-1">jaar<br/>vakmanschap</p>
+          </div>
+        </div>
+
+        <div>
+          <p class="text-amber-500 font-600 text-sm uppercase tracking-widest mb-4">Over ons</p>
+          <h2 class="text-slate-900 font-800 text-3xl sm:text-4xl leading-snug mb-6">
+            Begonnen als machinist,<br/>nu dé specialist.
+          </h2>
+          <p class="text-slate-500 leading-relaxed mb-6">
+            Adri Megens is al actief in de torenkranen sinds eind jaren '80. Begonnen als machinist, later gespecialiseerd in de technische kant van mobile torenkranen — van opbouw en demontage tot onderhoud, revisie en keuring.
+          </p>
+          <p class="text-slate-500 leading-relaxed mb-8">
+            A3 Kraanservice beschikt over een mobile werkplaats en een uitgebreide voorraad onderdelen. Samen met directe contacten bij kraanfabrikanten zorgen wij dat uw machine snel en goed gerepareerd is — op uw locatie.
+          </p>
+
+          <div class="flex flex-col sm:flex-row gap-6">
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 bg-slate-100 rounded-xl flex items-center justify-center flex-shrink-0">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-amber-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.948V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                </svg>
+              </div>
+              <div>
+                <p class="text-slate-400 text-xs font-500">Telefoon</p>
+                <a href="tel:+31627111255" class="text-slate-900 font-600 text-sm hover:text-amber-500 transition-colors">+31 6 27111255</a>
+              </div>
+            </div>
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 bg-slate-100 rounded-xl flex items-center justify-center flex-shrink-0">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-amber-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                </svg>
+              </div>
+              <div>
+                <p class="text-slate-400 text-xs font-500">E-mail</p>
+                <a href="mailto:info@a3kraanservice.nl" class="text-slate-900 font-600 text-sm hover:text-amber-500 transition-colors">info@a3kraanservice.nl</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- USP BALK -->
+  <section class="bg-slate-900 py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div class="flex items-start gap-4">
+          <div class="w-10 h-10 bg-amber-500/10 rounded-xl flex items-center justify-center flex-shrink-0">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-amber-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M8.111 16.404a5.5 5.5 0 017.778 0M12 20h.01m-7.08-7.071c3.904-3.905 10.236-3.905 14.141 0M1.394 9.393c5.857-5.857 15.355-5.857 21.213 0" />
+            </svg>
+          </div>
+          <div>
+            <h4 class="text-white font-600 text-sm mb-1">Mobile werkplaats</h4>
+            <p class="text-slate-400 text-xs leading-relaxed">Wij komen naar uw locatie — bouwwerf of opslagplaats</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-4">
+          <div class="w-10 h-10 bg-amber-500/10 rounded-xl flex items-center justify-center flex-shrink-0">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-amber-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
+            </svg>
+          </div>
+          <div>
+            <h4 class="text-white font-600 text-sm mb-1">Onderdelen op voorraad</h4>
+            <p class="text-slate-400 text-xs leading-relaxed">Directe contacten bij kraanfabrikanten, snel leverbaar</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-4">
+          <div class="w-10 h-10 bg-amber-500/10 rounded-xl flex items-center justify-center flex-shrink-0">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-amber-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+          </div>
+          <div>
+            <h4 class="text-white font-600 text-sm mb-1">Binnen- en buitenland</h4>
+            <p class="text-slate-400 text-xs leading-relaxed">Actief in Nederland en daarbuiten</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-4">
+          <div class="w-10 h-10 bg-amber-500/10 rounded-xl flex items-center justify-center flex-shrink-0">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-amber-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+            </svg>
+          </div>
+          <div>
+            <h4 class="text-white font-600 text-sm mb-1">Gecertificeerde keuringen</h4>
+            <p class="text-slate-400 text-xs leading-relaxed">Bevoegd voor 10 ton/meter en TCVT-keuringen</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALERIJ PREVIEW -->
+  <section class="py-24 bg-slate-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+      <div class="flex items-end justify-between mb-12">
+        <div>
+          <p class="text-amber-500 font-600 text-sm uppercase tracking-widest mb-3">Ons werk</p>
+          <h2 class="text-slate-900 font-800 text-3xl sm:text-4xl">Projecten</h2>
+        </div>
+        <a href="galerij.html" class="text-amber-500 font-600 text-sm flex items-center gap-2 hover:gap-3 transition-all">
+          Alle foto's
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+          </svg>
+        </a>
+      </div>
+
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+        <img src="../images/gallery_mobile-werkplaats.jpg" alt="Mobile werkplaats A3 Kraanservice" class="rounded-xl object-cover w-full h-48 md:h-64 col-span-2" />
+        <img src="../images/gallery_gaffert-1265-4-rotated.jpg" alt="Mobile torenkraan op locatie" class="rounded-xl object-cover w-full h-48 md:h-64" />
+        <img src="../images/gallery_bus1-rotated.jpg" alt="Kraanwagen A3 Kraanservice" class="rounded-xl object-cover w-full h-48 md:h-64" />
+        <img src="../images/gallery_hoofdgiek-op-mast.jpg" alt="Kraanmast detail" class="rounded-xl object-cover w-full h-48 md:h-64" />
+        <img src="../images/gallery_hd11.jpg" alt="Kraandetail onderhoud" class="rounded-xl object-cover w-full h-48 md:h-64" />
+        <img src="../images/project.jpg" alt="Kraanproject" class="rounded-xl object-cover w-full h-48 md:h-64 col-span-2" />
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="bg-amber-500 py-20">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 text-center">
+      <h2 class="text-slate-900 font-800 text-3xl sm:text-4xl mb-4">Vraag of offerte?</h2>
+      <p class="text-slate-800 text-lg mb-8">Neem vrijblijvend contact op. Wij staan u graag te woord.</p>
+      <div class="flex flex-wrap justify-center gap-4">
+        <a href="tel:+31627111255" class="bg-slate-900 hover:bg-slate-800 transition-colors text-white font-700 px-8 py-3 rounded-lg cursor-pointer inline-flex items-center gap-3">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.948V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+          </svg>
+          +31 6 27111255
+        </a>
+        <a href="mailto:info@a3kraanservice.nl" class="bg-white hover:bg-slate-50 transition-colors text-slate-900 font-700 px-8 py-3 rounded-lg cursor-pointer inline-flex items-center gap-3">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+          </svg>
+          info@a3kraanservice.nl
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-slate-900 py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+        <div class="lg:col-span-2">
+          <img src="../images/logo.png" alt="A3 Kraanservice" class="h-10 mb-4" />
+          <p class="text-slate-400 text-sm leading-relaxed max-w-xs">
+            Specialist in mobile torenkranen. Service, onderhoud, keuringen en aan/verkoopbemiddeling — al meer dan 35 jaar.
+          </p>
+          <div class="flex gap-4 mt-6">
+            <a href="https://nl-nl.facebook.com/people/A3-Craneservice-BV/100057256127568/" target="_blank" rel="noopener" class="w-8 h-8 bg-slate-800 hover:bg-amber-500 rounded-lg flex items-center justify-center transition-colors cursor-pointer">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+            </a>
+            <a href="https://www.linkedin.com/in/adri-megens-915a40178/" target="_blank" rel="noopener" class="w-8 h-8 bg-slate-800 hover:bg-amber-500 rounded-lg flex items-center justify-center transition-colors cursor-pointer">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="text-white font-600 text-sm mb-4">Diensten</h4>
+          <ul class="space-y-2">
+            <li><a href="service.html" class="text-slate-400 text-sm hover:text-amber-400 transition-colors">Service & Onderhoud</a></li>
+            <li><a href="keuringen.html" class="text-slate-400 text-sm hover:text-amber-400 transition-colors">Kraan Keuringen</a></li>
+            <li><a href="bemiddeling.html" class="text-slate-400 text-sm hover:text-amber-400 transition-colors">Aan/Verkoop Bemiddeling</a></li>
+            <li><a href="galerij.html" class="text-slate-400 text-sm hover:text-amber-400 transition-colors">Galerij</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="text-white font-600 text-sm mb-4">Contact</h4>
+          <ul class="space-y-2">
+            <li><a href="tel:+31627111255" class="text-slate-400 text-sm hover:text-amber-400 transition-colors">+31 6 27111255</a></li>
+            <li><a href="mailto:info@a3kraanservice.nl" class="text-slate-400 text-sm hover:text-amber-400 transition-colors">info@a3kraanservice.nl</a></li>
+            <li><a href="mailto:info@a3craneservice.com" class="text-slate-400 text-sm hover:text-amber-400 transition-colors">info@a3craneservice.com</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="border-t border-slate-800 pt-8 flex flex-col sm:flex-row justify-between items-center gap-4">
+        <p class="text-slate-500 text-xs">© 2025 A3 Kraanservice V.O.F. Alle rechten voorbehouden.</p>
+        <p class="text-slate-600 text-xs">Gebouwd door <a href="https://www.code-lieshout.nl" class="hover:text-amber-400 transition-colors">Code Lieshout</a></p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
